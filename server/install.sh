@@ -10,7 +10,7 @@
 # Komutlar:  install (varsayılan) | uninstall | link | status | users
 set -euo pipefail
 
-VERSION=1.0.0
+VERSION=1.0.1
 REPO="${HE_REPO:-emirhan-tan/xray-home-exit}"
 RAW="https://raw.githubusercontent.com/$REPO/main"
 
@@ -280,7 +280,7 @@ print_links() {
 	echo "  ya da: curl -fsSL $RAW/client/install.sh | sh -s -- '$link'"
 	echo
 	echo "Windows (Yönetici PowerShell):"
-	echo "  & ([scriptblock]::Create((irm $RAW/client/install.ps1))) -Link '$link'"
+	echo "  & ([scriptblock]::Create([Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('$RAW/client/install.ps1')))) -Link '$link'"
 	if [ "$MODE" = standalone ] && [ "$ENTRY_PORT" != 0 ]; then
 		echo
 		echo "${c_grn}─────────────────── TELEFON / PC İSTEMCİ LİNKİ ───────────────────${c_off}"

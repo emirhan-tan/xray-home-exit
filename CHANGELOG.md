@@ -2,6 +2,16 @@
 
 Sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarına uyar.
 
+## [1.0.1] — 2026-10-28
+
+### Düzeltildi
+- **Windows tek satırlık kurulum çalışmıyordu.** `install.ps1` UTF-8 BOM ile kaydedildiği için `irm`
+  ile indirilip `[scriptblock]::Create` ile çalıştırıldığında PowerShell baştaki görünmez BOM
+  karakteri yüzünden yorum bloğunu tanımıyor ve betik ayrıştırılamıyordu (`-File` ile çalıştırmada
+  sorun yoktu). Dosya artık BOM'suz; kod kısmında PowerShell'in tırnak sayabileceği karakter yok.
+- Windows komutu indirileni açıkça UTF-8 olarak çözüyor: sürüm dosyalarında da (GitHub bunları
+  karakter kodlaması belirtmeden sunar) Türkçe mesajlar doğru görünür.
+
 ## [1.0.0] — 2026-10-28
 
 İlk sürüm.
@@ -30,4 +40,5 @@ OpenWrt 24.10 (aarch64, armv7, mips, mipsel, x86_64, i386, RAM modu), OpenWrt 25
 Debian 12 (arm64, armhf), Alpine (armv6, riscv64) — qemu + chroot ile tünelden gerçek trafik;
 gerçek donanımda OpenWrt 25.12 arm64 router ve Windows 10 x64.
 
+[1.0.1]: https://github.com/emirhan-tan/xray-home-exit/releases/tag/v1.0.1
 [1.0.0]: https://github.com/emirhan-tan/xray-home-exit/releases/tag/v1.0.0

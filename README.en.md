@@ -79,7 +79,7 @@ wget -qO- https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/clie
 
 ```powershell
 # Windows (Administrator PowerShell)
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1))) -Link 'vless://…'
+& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1')))) -Link 'vless://…'
 ```
 
 **3. Check** — `bash install.sh status` on the VPS shows the connected tunnel and the exit IP.

@@ -1,10 +1,10 @@
-﻿<#
-  xray-home-exit — Windows ev cihazı kurulumu (Windows 10/11, x64 / ARM64 / x86)
+<#
+  xray-home-exit - Windows ev cihazı kurulumu (Windows 10/11, x64 / ARM64 / x86)
 
   Yönetici PowerShell'de:
-    & ([scriptblock]::Create((irm https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1))) -Link 'vless://…'
+    & ([scriptblock]::Create([Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1')))) -Link 'vless://...'
   Kaldırma:
-    & ([scriptblock]::Create((irm https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1))) -Uninstall
+    & ([scriptblock]::Create([Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1')))) -Uninstall
 
   Xray, açılışta SYSTEM hesabıyla başlayan bir zamanlanmış görev olarak çalışır;
   çökerse yeniden başlatılır, ayrıca 2 dakikada bir bağlantı kontrol edilir.
@@ -21,13 +21,13 @@ param(
     [switch]$NoService    # görev kurma (test için; yönetici gerekmez)
 )
 $ErrorActionPreference = 'Stop'
-$HeVersion = '1.0.0'
+$HeVersion = '1.0.1'
 $ProgressPreference = 'SilentlyContinue'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-function Ok($m)   { Write-Host "✔ $m" -ForegroundColor Green }
+function Ok($m)   { Write-Host "$([char]0x2714) $m" -ForegroundColor Green }
 function Info($m) { Write-Host "==> $m" -ForegroundColor Cyan }
-function Fail($m) { Write-Host "✘ $m" -ForegroundColor Red; exit 1 }
+function Fail($m) { Write-Host "$([char]0x2718) $m" -ForegroundColor Red; exit 1 }
 
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin -and -not $NoService) { Fail 'PowerShell''i "Yönetici olarak çalıştır" ile açın' }
@@ -65,7 +65,7 @@ if ($Status) {
 }
 
 # ------------------------------------------------------------------ link
-if (-not $Link) { Fail "Bağlantı linki gerekli: -Link 'vless://…' (sunucuda: install.sh link)" }
+if (-not $Link) { Fail "Bağlantı linki gerekli: -Link 'vless://...' (sunucuda: install.sh link)" }
 if ($Link -notmatch '^vless://(?<uuid>[0-9a-fA-F-]{36})@(?<host>\[[^\]]+\]|[^:/?#]+):(?<port>\d+)/?(\?(?<q>[^#]*))?') { Fail 'Link çözülemedi' }
 $Uuid = $Matches.uuid; $SrvHost = $Matches.host.Trim('[', ']'); $Port = [int]$Matches.port
 $Q = @{}
@@ -94,7 +94,7 @@ $url = if ($XrayVersion -eq 'latest') { "https://github.com/XTLS/Xray-core/relea
 
 if (Get-ScheduledTask -TaskName $Task -ErrorAction SilentlyContinue) { Stop-ScheduledTask -TaskName $Task }
 Get-Process xray -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $Xray } | Stop-Process -Force
-Info "xray-home-exit $HeVersion — Xray indiriliyor: $url"
+Info "xray-home-exit $HeVersion - Xray indiriliyor: $url"
 $zip = Join-Path $env:TEMP "xray-$Name.zip"
 $tmp = Join-Path $env:TEMP "xray-$Name"
 Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $zip

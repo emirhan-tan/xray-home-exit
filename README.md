@@ -98,7 +98,7 @@ wget -qO- https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/clie
 
 **Windows** (Yönetici PowerShell)
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1))) -Link 'vless://…'
+& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('https://raw.githubusercontent.com/emirhan-tan/xray-home-exit/main/client/install.ps1')))) -Link 'vless://…'
 ```
 
 ### 3 · Kontrol
@@ -116,7 +116,7 @@ Yukarıdaki komutlar her zaman en güncel `main` dalını kullanır. Sabit bir s
 [Releases](https://github.com/emirhan-tan/xray-home-exit/releases) sayfasındaki dosyaları kullan:
 
 ```sh
-V=v1.0.0
+V=v1.0.1
 curl -fsSL https://github.com/emirhan-tan/xray-home-exit/releases/download/$V/server-install.sh | bash -s -- --users kullanici1
 wget -qO- https://github.com/emirhan-tan/xray-home-exit/releases/download/$V/client-install.sh | sh -s -- 'vless://…'
 ```
