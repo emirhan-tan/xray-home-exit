@@ -7,6 +7,7 @@
 A one-command VLESS Reverse bridge that sends selected traffic arriving at your VPS out through
 your router / Raspberry Pi / PC at home — **with your residential IP**.
 
+[![Release](https://img.shields.io/github/v/release/emirhan-tan/xray-home-exit?color=8a2be2)](https://github.com/emirhan-tan/xray-home-exit/releases/latest)
 [![Xray](https://img.shields.io/badge/Xray--core-26.x-0a7cff)](https://github.com/XTLS/Xray-core)
 [![OpenWrt](https://img.shields.io/badge/OpenWrt-24.10%20%7C%2025.12-00B5E2?logo=openwrt&logoColor=white)](#supported-devices)
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-arm64%20%7C%20armhf%20%7C%20armv6-C51A4A?logo=raspberrypi&logoColor=white)](#supported-devices)

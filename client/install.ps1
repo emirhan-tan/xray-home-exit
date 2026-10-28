@@ -21,6 +21,7 @@ param(
     [switch]$NoService    # görev kurma (test için; yönetici gerekmez)
 )
 $ErrorActionPreference = 'Stop'
+$HeVersion = '1.0.0'
 $ProgressPreference = 'SilentlyContinue'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
@@ -93,7 +94,7 @@ $url = if ($XrayVersion -eq 'latest') { "https://github.com/XTLS/Xray-core/relea
 
 if (Get-ScheduledTask -TaskName $Task -ErrorAction SilentlyContinue) { Stop-ScheduledTask -TaskName $Task }
 Get-Process xray -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $Xray } | Stop-Process -Force
-Info "Xray indiriliyor: $url"
+Info "xray-home-exit $HeVersion — Xray indiriliyor: $url"
 $zip = Join-Path $env:TEMP "xray-$Name.zip"
 $tmp = Join-Path $env:TEMP "xray-$Name"
 Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $zip

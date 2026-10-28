@@ -7,6 +7,7 @@
 VDS'ine gelen trafiğin seçtiğin kısmını, evdeki router / Raspberry Pi / PC üzerinden
 **ev IP'nle** internete çıkaran, tek komutla kurulan VLESS Reverse köprüsü.
 
+[![Release](https://img.shields.io/github/v/release/emirhan-tan/xray-home-exit?color=8a2be2)](https://github.com/emirhan-tan/xray-home-exit/releases/latest)
 [![Xray](https://img.shields.io/badge/Xray--core-26.x-0a7cff)](https://github.com/XTLS/Xray-core)
 [![OpenWrt](https://img.shields.io/badge/OpenWrt-24.10%20%7C%2025.12-00B5E2?logo=openwrt&logoColor=white)](#-desteklenen-cihazlar)
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-arm64%20%7C%20armhf%20%7C%20armv6-C51A4A?logo=raspberrypi&logoColor=white)](#raspberry-pi)
@@ -108,6 +109,19 @@ Mod: xui   Köprü portu: 10086   Bağlı ev tüneli: 1
 Çıkış IP'si (127.0.0.1:1080): 88.xxx.xxx.xxx   ← ev IP'n
 Sunucu IP'si:                 45.xxx.xxx.xxx
 ```
+
+### Belirli bir sürümü kurmak
+
+Yukarıdaki komutlar her zaman en güncel `main` dalını kullanır. Sabit bir sürüm için
+[Releases](https://github.com/emirhan-tan/xray-home-exit/releases) sayfasındaki dosyaları kullan:
+
+```sh
+V=v1.0.0
+curl -fsSL https://github.com/emirhan-tan/xray-home-exit/releases/download/$V/server-install.sh | bash -s -- --users kullanici1
+wget -qO- https://github.com/emirhan-tan/xray-home-exit/releases/download/$V/client-install.sh | sh -s -- 'vless://…'
+```
+
+Her sürümde dosyaların `SHA256SUMS.txt` özetleri de bulunur. Değişiklikler: [CHANGELOG.md](CHANGELOG.md).
 
 ## 📟 Desteklenen cihazlar
 

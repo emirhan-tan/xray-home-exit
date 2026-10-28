@@ -10,6 +10,7 @@
 # Komutlar:  install (varsayılan) | uninstall | link | status | users
 set -euo pipefail
 
+VERSION=1.0.0
 REPO="${HE_REPO:-emirhan-tan/xray-home-exit}"
 RAW="https://raw.githubusercontent.com/$REPO/main"
 
@@ -96,6 +97,7 @@ while [ $# -gt 0 ]; do
 		--ipv6) IPV6=1 ;;
 		--no-ipv6) IPV6=off ;;
 		-h|--help) usage; exit 0 ;;
+		-v|--version) echo "xray-home-exit $VERSION"; exit 0 ;;
 		*) die "Bilinmeyen seçenek: $1 (yardım: --help)" ;;
 	esac
 	shift
@@ -532,7 +534,7 @@ detect_mode() {
 		if [ -f "$XUI_DB" ] && ls "$XUI_BIN_DIR"/xray-linux-* >/dev/null 2>&1; then MODE=xui; else MODE=standalone; fi
 	fi
 	case "$MODE" in xui|standalone) ;; *) die "--mode auto, xui veya standalone olmalı" ;; esac
-	log "Mod: $MODE"
+	log "xray-home-exit $VERSION — mod: $MODE"
 }
 
 do_install() {

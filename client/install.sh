@@ -18,6 +18,7 @@
 #   --no-service       servis kurma/başlatma (test ve özel init sistemleri için)
 set -eu
 
+VERSION=1.0.0
 NAME=home-exit
 LINK=""
 ALLOW_LAN=0
@@ -46,6 +47,7 @@ while [ $# -gt 0 ]; do
 		--ram) RAM=1 ;;
 		--xray-version) XRAY_VERSION=$2; shift ;;
 		--no-service) NO_SERVICE=1 ;;
+		-v|--version) echo "xray-home-exit $VERSION"; exit 0 ;;
 		-h|--help) sed -n '2,20p' "$0" 2>/dev/null | sed 's/^# \{0,1\}//'; exit 0 ;;
 		*) die "Bilinmeyen seçenek: $1" ;;
 	esac
@@ -466,7 +468,7 @@ wait_connected() {
 
 do_install() {
 	parse_link
-	log "Platform: $PLATFORM ($(uname -m)${DISTRIB_DESCRIPTION:+, $DISTRIB_DESCRIPTION}), IPv6: $([ "$IPV6" = 1 ] && echo açık || echo kapalı)"
+	log "xray-home-exit $VERSION — platform: $PLATFORM ($(uname -m)${DISTRIB_DESCRIPTION:+, $DISTRIB_DESCRIPTION}), IPv6: $([ "$IPV6" = 1 ] && echo açık || echo kapalı)"
 	setup_xray
 	write_config
 	write_helpers
