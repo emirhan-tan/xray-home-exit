@@ -39,7 +39,7 @@ ise **evdeki cihazın içeriden açtığı tünelden** ev IP'nle çıkar. Port y
 | 🛡️ **Güvenli varsayılanlar** | REALITY şifreleme (alan adı/sertifika gerekmez), ev yerel ağına (modem paneli, 192.168.x) erişim engelli. |
 | 🌐 **IPv4 / IPv6** | Varsayılan yalnızca IPv4 (sızıntı yok); `--ipv6` ile ev hattının IPv6'sı da açılır. |
 | 📦 **Her yerde çalışır** | OpenWrt, Raspberry Pi OS, Debian/Ubuntu, Alpine, Windows; arm64, armv7, armv6, mips, x86, riscv64… |
-| 🪶 **Hafif** | 256 MB RAM'li router'da ~30 MB RAM. Flash'ı küçük cihazlar için RAM modu. |
+| 🍃 **Hafif** | 256 MB RAM'li router'da ~30 MB RAM. Flash'ı küçük cihazlar için RAM modu. |
 | 🤖 **Sunucu içi SOCKS5** | `127.0.0.1:1080` ile sunucudaki botlar, betikler, `curl` ve `proxychains` de ev IP'sini kullanır. |
 
 ### 🧭 Nasıl çalışır
@@ -291,7 +291,7 @@ static IP or DDNS needed.
 | 🛡️ **Safe defaults** | REALITY transport (no domain/certificate), home LAN (router panel, 192.168.x) blocked from the VPS side. |
 | 🌐 **IPv4 / IPv6** | IPv4-only by default (no leaks); `--ipv6` enables your home IPv6 too. |
 | 📦 **Runs everywhere** | OpenWrt, Raspberry Pi OS, Debian/Ubuntu, Alpine, Windows; arm64, armv7, armv6, mips, x86, riscv64… |
-| 🪶 **Lightweight** | ~30 MB RAM on a 256 MB router; RAM mode for small-flash devices. |
+| 🍃 **Lightweight** | ~30 MB RAM on a 256 MB router; RAM mode for small-flash devices. |
 | 🤖 **Local SOCKS5 on the VPS** | `127.0.0.1:1080` lets bots, scripts, `curl` and `proxychains` use your home IP. |
 
 ### 🧭 How it works
