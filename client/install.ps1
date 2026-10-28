@@ -21,7 +21,7 @@ param(
     [switch]$NoService    # görev kurma (test için; yönetici gerekmez)
 )
 $ErrorActionPreference = 'Stop'
-$HeVersion = '1.0.1'
+$HeVersion = '1.0.0'
 $ProgressPreference = 'SilentlyContinue'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 

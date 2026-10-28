@@ -116,7 +116,7 @@ Yukarıdaki komutlar her zaman en güncel `main` dalını kullanır. Sabit bir s
 [Releases](https://github.com/emirhan-tan/xray-home-exit/releases) sayfasındaki dosyaları kullan:
 
 ```sh
-V=v1.0.1
+V=v1.0.0
 curl -fsSL https://github.com/emirhan-tan/xray-home-exit/releases/download/$V/server-install.sh | bash -s -- --users kullanici1
 wget -qO- https://github.com/emirhan-tan/xray-home-exit/releases/download/$V/client-install.sh | sh -s -- 'vless://…'
 ```

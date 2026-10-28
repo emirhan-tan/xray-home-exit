@@ -18,7 +18,7 @@
 #   --no-service       servis kurma/başlatma (test ve özel init sistemleri için)
 set -eu
 
-VERSION=1.0.1
+VERSION=1.0.0
 NAME=home-exit
 LINK=""
 ALLOW_LAN=0

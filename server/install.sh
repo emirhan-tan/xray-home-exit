@@ -10,7 +10,7 @@
 # Komutlar:  install (varsayılan) | uninstall | link | status | users
 set -euo pipefail
 
-VERSION=1.0.1
+VERSION=1.0.0
 REPO="${HE_REPO:-emirhan-tan/xray-home-exit}"
 RAW="https://raw.githubusercontent.com/$REPO/main"
 
