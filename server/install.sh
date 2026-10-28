@@ -584,6 +584,7 @@ do_uninstall() {
 		ls "$STATE_DIR"/*.env 2>/dev/null | grep -qv "^$STATE$" || rm -rf "$LIB_DIR"
 	fi
 	rm -f "$STATE"
+	rmdir "$STATE_DIR" 2>/dev/null || true
 	ok "'$NAME' kaldırıldı"
 }
 
