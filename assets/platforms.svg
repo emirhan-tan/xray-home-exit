@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330">
+  <title>Desteklenen sistemler · Supported systems</title>
+  <style>
+    .mono{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Consolas,'Liberation Mono',Menlo,monospace}
+    .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif}
+    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .c{animation:rise .6s ease-out both}
+  </style>
+  <rect x=".5" y=".5" width="1199" height="329" rx="20" fill="#0d1116" stroke="#1f252d"/>
+  <rect x="56" y="0" width="72" height="3" rx="1.5" fill="#78ffb4"/>
+  <text x="56" y="46" class="mono" font-size="11" letter-spacing="1.5" fill="#6b7684">DESTEKLENEN SİSTEMLER · SUPPORTED SYSTEMS</text>
+  <rect x="1004" y="27" width="156" height="28" rx="14" fill="#78ffb4" fill-opacity=".08" stroke="#78ffb4" stroke-opacity=".5"/>
+  <text x="1082" y="46" class="mono" font-size="12" text-anchor="middle" fill="#78ffb4">13/13 test ✓</text>
+  <g class="c" style="animation-delay:0.00s">
+    <rect x="40" y="72" width="212" height="226" rx="14" fill="#12161b" stroke="#2a323c" stroke-width="1.5"/>
+    <g transform="translate(60 92)"><rect x="0" y="12" width="34" height="16" rx="4" fill="none" stroke="#78ffb4" stroke-width="2"/><path d="M7 12 4 2M27 12 30 2" stroke="#78ffb4" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="20" r="1.8" fill="#78ffb4"/><circle cx="14" cy="20" r="1.8" fill="#78ffb4"/></g>
+    <text x="60" y="156" class="sans" font-size="17" font-weight="600" fill="#e8ecf1">OpenWrt</text>
+    <text x="60" y="177" class="sans" font-size="12.5" fill="#8a94a3">24.10 · 25.12</text>
+    <rect x="60" y="196" width="64" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="92.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">aarch64</text>
+    <rect x="130" y="196" width="50" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="155.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">armv7</text>
+    <rect x="186" y="196" width="43" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="207.5" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">mips</text>
+    <rect x="60" y="226" width="57" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="88.5" y="241" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">mipsel</text>
+    <rect x="123" y="226" width="57" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="151.5" y="241" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">x86_64</text>
+    <rect x="186" y="226" width="43" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="207.5" y="241" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">i386</text>
+    <path d="M60 268h172" stroke="#1f252d"/>
+    <text x="60" y="286" class="sans" font-size="11.5" fill="#6b7684">procd · opkg / apk</text>
+  </g>
+  <g class="c" style="animation-delay:0.08s">
+    <rect x="268" y="72" width="212" height="226" rx="14" fill="#12161b" stroke="#2a323c" stroke-width="1.5"/>
+    <g transform="translate(288 92)"><circle cx="11" cy="12" r="5.5" fill="none" stroke="#ff6b8b" stroke-width="2"/><circle cx="23" cy="12" r="5.5" fill="none" stroke="#ff6b8b" stroke-width="2"/><circle cx="17" cy="21" r="5.5" fill="none" stroke="#ff6b8b" stroke-width="2"/><circle cx="8" cy="23" r="5.5" fill="none" stroke="#ff6b8b" stroke-width="2"/><circle cx="26" cy="23" r="5.5" fill="none" stroke="#ff6b8b" stroke-width="2"/><path d="M13 5Q17 1 21 5" fill="none" stroke="#78ffb4" stroke-width="2" stroke-linecap="round"/></g>
+    <text x="288" y="156" class="sans" font-size="17" font-weight="600" fill="#e8ecf1">Raspberry Pi</text>
+    <text x="288" y="177" class="sans" font-size="12.5" fill="#8a94a3">Pi OS · Debian 12</text>
+    <rect x="288" y="196" width="50" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="313.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">arm64</text>
+    <rect x="344" y="196" width="50" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="369.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">armhf</text>
+    <rect x="400" y="196" width="50" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="425.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">armv6</text>
+    <path d="M288 268h172" stroke="#1f252d"/>
+    <text x="288" y="286" class="sans" font-size="11.5" fill="#6b7684">systemd · Pi Zero → Pi 5</text>
+  </g>
+  <g class="c" style="animation-delay:0.16s">
+    <rect x="496" y="72" width="212" height="226" rx="14" fill="#12161b" stroke="#2a323c" stroke-width="1.5"/>
+    <g transform="translate(516 92)"><rect x="0" y="2" width="34" height="26" rx="5" fill="none" stroke="#c3cad3" stroke-width="2"/><path d="M7 11l5 4-5 4M16 20h9" fill="none" stroke="#78ffb4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="516" y="156" class="sans" font-size="17" font-weight="600" fill="#e8ecf1">Linux</text>
+    <text x="516" y="177" class="sans" font-size="12.5" fill="#8a94a3">Debian · Ubuntu · Alpine</text>
+    <rect x="516" y="196" width="57" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="544.5" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">x86_64</text>
+    <rect x="579" y="196" width="50" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="604.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">arm64</text>
+    <rect x="516" y="226" width="64" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="548.0" y="241" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">riscv64</text>
+    <path d="M516 268h172" stroke="#1f252d"/>
+    <text x="516" y="286" class="sans" font-size="11.5" fill="#6b7684">systemd · OpenRC</text>
+  </g>
+  <g class="c" style="animation-delay:0.24s">
+    <rect x="724" y="72" width="212" height="226" rx="14" fill="#12161b" stroke="#2a323c" stroke-width="1.5"/>
+    <g transform="translate(744 92)"><rect x="2" y="3" width="14" height="12" rx="1.5" fill="#4fa3ff"/><rect x="18" y="3" width="14" height="12" rx="1.5" fill="#4fa3ff"/><rect x="2" y="17" width="14" height="12" rx="1.5" fill="#4fa3ff"/><rect x="18" y="17" width="14" height="12" rx="1.5" fill="#4fa3ff"/></g>
+    <text x="744" y="156" class="sans" font-size="17" font-weight="600" fill="#e8ecf1">Windows</text>
+    <text x="744" y="177" class="sans" font-size="12.5" fill="#8a94a3">10 · 11</text>
+    <rect x="744" y="196" width="36" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="762.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">x64</text>
+    <rect x="786" y="196" width="50" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="811.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">ARM64</text>
+    <rect x="842" y="196" width="36" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="860.0" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">x86</text>
+    <path d="M744 268h172" stroke="#1f252d"/>
+    <text x="744" y="286" class="sans" font-size="11.5" fill="#6b7684">zamanlanmış görev · task</text>
+  </g>
+  <g class="c" style="animation-delay:0.32s">
+    <rect x="952" y="72" width="212" height="226" rx="14" fill="#12161b" stroke="#2a323c" stroke-width="1.5"/>
+    <g transform="translate(972 92)"><rect x="0" y="2" width="34" height="12" rx="3" fill="none" stroke="#b69cff" stroke-width="2"/><rect x="0" y="17" width="34" height="12" rx="3" fill="none" stroke="#b69cff" stroke-width="2"/><circle cx="27" cy="8" r="1.8" fill="#78ffb4"/><circle cx="27" cy="23" r="1.8" fill="#b69cff"/></g>
+    <text x="972" y="156" class="sans" font-size="17" font-weight="600" fill="#e8ecf1">Sunucu · Server</text>
+    <text x="972" y="177" class="sans" font-size="12.5" fill="#8a94a3">x-ui · 3x-ui · standalone</text>
+    <rect x="972" y="196" width="57" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="1000.5" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">Ubuntu</text>
+    <rect x="1035" y="196" width="57" height="22" rx="11" fill="#0d1116" stroke="#2a323c"/><text x="1063.5" y="211" class="mono" font-size="11" text-anchor="middle" fill="#c3cad3">Debian</text>
+    <path d="M972 268h172" stroke="#1f252d"/>
+    <text x="972" y="286" class="sans" font-size="11.5" fill="#6b7684">Xray-core 26.x</text>
+  </g>
+</svg>
