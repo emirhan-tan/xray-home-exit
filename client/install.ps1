@@ -27,7 +27,8 @@ $ProgressPreference = 'SilentlyContinue'
 
 function Ok($m)   { Write-Host "$([char]0x2714) $m" -ForegroundColor Green }
 function Info($m) { Write-Host "==> $m" -ForegroundColor Cyan }
-function Fail($m) { Write-Host "$([char]0x2718) $m" -ForegroundColor Red; exit 1 }
+# exit kullanılmaz: tek satırlık komutta kullanıcının PowerShell penceresini kapatır
+function Fail($m) { throw "$([char]0x2718) $m" }
 
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin -and -not $NoService) { Fail 'PowerShell''i "Yönetici olarak çalıştır" ile açın' }
@@ -54,14 +55,14 @@ if ($Uninstall) {
     Start-Sleep 1
     if (Test-Path $Dir) { Remove-Item $Dir -Recurse -Force }
     Ok "'$Name' kaldırıldı"
-    exit 0
+    return
 }
 
 if ($Status) {
     if (-not (Test-Path "$Dir\port.txt")) { Fail "'$Name' kurulu değil" }
     $p = [int](Get-Content "$Dir\port.txt")
     if (Test-Tunnel $p) { Ok "Tünel bağlı (port $p)" } else { Write-Host "! Tünel bağlı değil" -ForegroundColor Yellow }
-    exit 0
+    return
 }
 
 # ------------------------------------------------------------------ link
@@ -138,7 +139,7 @@ $json = @"
 $test = & $Xray run -test -c $Conf 2>&1
 if ($LASTEXITCODE -ne 0) { $test | Write-Host; Fail 'Oluşan ayar geçersiz' }
 Set-Content -Path "$Dir\port.txt" -Value $Port -Encoding ascii
-if ($NoService) { Ok "Dosyalar kuruldu (görev kurulmadı). Çalıştırmak için: & '$Xray' run -c '$Conf'"; exit 0 }
+if ($NoService) { Ok "Dosyalar kuruldu (görev kurulmadı). Çalıştırmak için: & '$Xray' run -c '$Conf'"; return }
 # yapılandırma UUID içerir: yalnızca SYSTEM ve Yöneticiler okuyabilsin
 icacls $Dir /inheritance:r /grant:r '*S-1-5-18:(OI)(CI)F' '*S-1-5-32-544:(OI)(CI)F' | Out-Null
 
@@ -171,6 +172,6 @@ Start-ScheduledTask -TaskName $Task
 Info "Sunucuya bağlanılıyor ($SrvHost`:$Port)"
 for ($i = 0; $i -lt 20; $i++) {
     Start-Sleep 1
-    if (Test-Tunnel $Port) { Ok 'Tünel kuruldu. Sunucuda kontrol: bash install.sh status'; exit 0 }
+    if (Test-Tunnel $Port) { Ok 'Tünel kuruldu. Sunucuda kontrol: bash install.sh status'; return }
 }
 Fail "20 sn içinde bağlantı kurulamadı. Linki ve sunucunun $Port portunu kontrol edin"
